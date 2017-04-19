@@ -1,9 +1,14 @@
-# api documentation for  [safe-regex (v1.1.0)](https://github.com/substack/safe-regex)  [![npm package](https://img.shields.io/npm/v/npmdoc-safe-regex.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-safe-regex) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-safe-regex.svg)](https://travis-ci.org/npmdoc/node-npmdoc-safe-regex)
+# npmdoc-safe-regex
+
+#### api documentation for  [safe-regex (v1.1.0)](https://github.com/substack/safe-regex)  [![npm package](https://img.shields.io/npm/v/npmdoc-safe-regex.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-safe-regex) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-safe-regex.svg)](https://travis-ci.org/npmdoc/node-npmdoc-safe-regex)
+
 #### detect possibly catastrophic, exponential-time regular expressions
 
-[![NPM](https://nodei.co/npm/safe-regex.png?downloads=true)](https://www.npmjs.com/package/safe-regex)
+[![NPM](https://nodei.co/npm/safe-regex.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/safe-regex)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-safe-regex/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-safe-regex_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-safe-regex/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-safe-regex/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-safe-regex/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-safe-regex/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-safe-regex/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-safe-regex/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "James Halliday",
-        "email": "mail@substack.net",
         "url": "http://substack.net"
     },
     "bugs": {
@@ -49,13 +53,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "substack",
-            "email": "mail@substack.net"
+            "name": "substack"
         }
     ],
     "name": "safe-regex",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/substack/safe-regex.git"
@@ -78,16 +80,6 @@
     "version": "1.1.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module safe-regex](#apidoc.module.safe-regex)
-
-
-
-# <a name="apidoc.module.safe-regex"></a>[module safe-regex](#apidoc.module.safe-regex)
 
 
 
