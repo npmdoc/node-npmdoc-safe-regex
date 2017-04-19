@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/substack/safe-regex"
-
-    >safe-regex (v1.1.0)</a>
+    <a href="https://github.com/substack/safe-regex">safe-regex (v1.1.0)</a>
 </h1>
 <h4>detect possibly catastrophic, exponential-time regular expressions</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.safe-regex">module safe-regex</a><ol>
 
@@ -90,7 +83,7 @@
     var replimit = opts.limit === undefined ? 25 : opts.limit;
 
     if (isRegExp(re)) re = re.source;
-    else if (typeof re !== &#x27;string&#x27;) re = String(re);
+    else if (typeof re !== 'string') re = String(re);
 
     try { re = parse(re) }
     catch (err) { return false }
@@ -100,20 +93,20 @@
         if (node.type === types.REPETITION) {
             starHeight ++;
             reps ++;
-            if (starHeight &#x3e; 1) return false;
-            if (reps &#x3e; replimit) return false;
+            if (starHeight &gt; 1) return false;
+            if (reps &gt; replimit) return false;
         }
 
         if (node.options) {
-            for (var i = 0, len = node.options.length; i &#x3c; len; i++) {
+            for (var i = 0, len = node.options.length; i &lt; len; i++) {
                 var ok = walk({ stack: node.options[i] }, starHeight);
                 if (!ok) return false;
             }
         }
-        var stack = node.stack || (node.value &#x26;&#x26; node.value.stack);
+        var stack = node.stack || (node.value &amp;&amp; node.value.stack);
         if (!stack) return true;
 
-        for (var i = 0; i &#x3c; stack.length; i++) {
+        for (var i = 0; i &lt; stack.length; i++) {
             var ok = walk(stack[i], starHeight);
             if (!ok) return false;
         }
@@ -133,3 +126,4 @@
     ]
 </div>
 </div>
+</body></html>

@@ -61,12 +61,69 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.safe-regex">module safe-regex</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.safe-regex.safe-regex">
+            function <span class="apidocSignatureSpan"></span>safe-regex
+            <span class="apidocSignatureSpan">(re, opts)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.safe-regex" id="apidoc.module.safe-regex">module safe-regex</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.safe-regex.safe-regex" id="apidoc.element.safe-regex.safe-regex">
+        function <span class="apidocSignatureSpan"></span>safe-regex
+        <span class="apidocSignatureSpan">(re, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">safe-regex = function (re, opts) {
+    if (!opts) opts = {};
+    var replimit = opts.limit === undefined ? 25 : opts.limit;
+
+    if (isRegExp(re)) re = re.source;
+    else if (typeof re !== &#x27;string&#x27;) re = String(re);
+
+    try { re = parse(re) }
+    catch (err) { return false }
+
+    var reps = 0;
+    return (function walk (node, starHeight) {
+        if (node.type === types.REPETITION) {
+            starHeight ++;
+            reps ++;
+            if (starHeight &#x3e; 1) return false;
+            if (reps &#x3e; replimit) return false;
+        }
+
+        if (node.options) {
+            for (var i = 0, len = node.options.length; i &#x3c; len; i++) {
+                var ok = walk({ stack: node.options[i] }, starHeight);
+                if (!ok) return false;
+            }
+        }
+        var stack = node.stack || (node.value &#x26;&#x26; node.value.stack);
+        if (!stack) return true;
+
+        for (var i = 0; i &#x3c; stack.length; i++) {
+            var ok = walk(stack[i], starHeight);
+            if (!ok) return false;
+        }
+
+        return true;
+    })(re, 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
